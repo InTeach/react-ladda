@@ -117,9 +117,7 @@ var LaddaButton = function (_Component) {
           disabled: this.props.disabled || this.props.loading }),
         _react2.default.createElement(
           "span",
-          {
-            style: _extends({}, this.props.labelStyles || {}),
-            className: "ladda-label ceci-est-un-test" },
+          _extends({}, this.props.labelProps || {}, { className: "ladda-label" }),
           this.props.children
         )
       );
@@ -135,7 +133,7 @@ LaddaButton.propTypes = {
   progress: _propTypes2.default.number,
   loading: _propTypes2.default.bool,
   disabled: _propTypes2.default.bool,
-  labelStyles: _propTypes2.default.object,
+  labelProps: _propTypes2.default.object,
 
   // Ladda props
   // eslint-disable-next-line react/no-unused-prop-types

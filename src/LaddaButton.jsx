@@ -26,7 +26,7 @@ export default class LaddaButton extends Component {
     progress: PropTypes.number,
     loading: PropTypes.bool,
     disabled: PropTypes.bool,
-    labelStyles: PropTypes.object,
+    labelProps: PropTypes.object,
 
     // Ladda props
     // eslint-disable-next-line react/no-unused-prop-types
@@ -93,9 +93,7 @@ export default class LaddaButton extends Component {
         className={`ladda-button ${this.props.className || ""}`}
         ref={this.setNode}
         disabled={this.props.disabled || this.props.loading}>
-        <span
-          style={{ ...(this.props.labelStyles || {}) }}
-          className="ladda-label ceci-est-un-test">
+        <span {...(this.props.labelProps || {})} className="ladda-label">
           {this.props.children}
         </span>
       </button>
